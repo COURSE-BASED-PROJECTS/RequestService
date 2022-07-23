@@ -11,9 +11,9 @@ import java.util.Optional;
 
 @Service
 public class PassengerService {
-    @Autowired
     private PassengerRepository passengerRepository;
 
+    @Autowired
     public PassengerService(PassengerRepository passengerRepository) {
         this.passengerRepository = passengerRepository;
     }
@@ -30,6 +30,6 @@ public class PassengerService {
     }
 
     public Optional<PassengerRequest> findByPassengerRequestId(Integer passengerId) {
-        return passengerRepository.findByPassengerRequestId(passengerId);
+        return passengerRepository.findById(passengerId);
     }
 }

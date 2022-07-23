@@ -10,9 +10,9 @@ import java.util.Optional;
 
 @Service
 public class CallCenterService {
-    @Autowired
     private CallCenterRepository callCenterRepository;
 
+    @Autowired
     public CallCenterService(CallCenterRepository callCenterRepository) {
         this.callCenterRepository = callCenterRepository;
     }
@@ -29,6 +29,7 @@ public class CallCenterService {
     }
 
     public Optional<CallCenterRequest> findByCallCenterRequestId(Integer reqId) {
-        return callCenterRepository.findByCallCenterRequestId(reqId);
+        return callCenterRepository.findById(reqId);
     }
+
 }
