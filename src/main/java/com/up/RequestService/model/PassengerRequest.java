@@ -22,41 +22,27 @@ public class PassengerRequest {
     @Column(name = "passenger_avatar")
     public String passengerAvatar;
 
-    @Column(name = "picking_address")
-    public String pickingAddress;
+    @Column(name = "account_id")
+    public Integer accountId;
 
-    @Column(name = "arriving_address")
-    public String arrivingAddress;
+    @Column(name = "hailing_id")
+    public Integer hailing_id;
 
-    @Column(name = "lng_picking_addr")
-    public Double lngPicking;
 
-    @Column(name = "lat_picking_addr")
-    public Double latPicking;
-
-    @Column(name = "lng_arriving_address")
-    public Double lngArriving;
-
-    @Column(name = "lat_arriving_address")
-    public Double latArriving;
 
     public PassengerRequest() {
     }
 
-    public PassengerRequest(Integer passengerId, String phoneNumber, String passengerName, String passengerAvatar, String pickingAddress, String arrivingAddress, Double lngPicking, Double latPicking, Double lngArriving, Double latArriving) {
+    public PassengerRequest(Integer passengerId, String phoneNumber, String passengerName, String passengerAvatar, Integer accountId, Integer hailing_id) {
         this.passengerId = passengerId;
         this.phoneNumber = phoneNumber;
         this.passengerName = passengerName;
         this.passengerAvatar = passengerAvatar;
-        this.pickingAddress = pickingAddress;
-        this.arrivingAddress = arrivingAddress;
-        this.lngPicking = lngPicking;
-        this.latPicking = latPicking;
-        this.lngArriving = lngArriving;
-        this.latArriving = latArriving;
+        this.accountId = accountId;
+        this.hailing_id = hailing_id;
     }
 
-    public Integer getPassenger_id() {
+    public Integer getPassengerId() {
         return passengerId;
     }
 
@@ -72,27 +58,11 @@ public class PassengerRequest {
         return passengerAvatar;
     }
 
-    public String getPickingAddress() {
-        return pickingAddress;
+    public Integer getAccountId() {
+        return accountId;
     }
 
-    public String getArrivingAddress() {
-        return arrivingAddress;
-    }
-
-    public Double getLngPicking() {
-        return lngPicking;
-    }
-
-    public Double getLatPicking() {
-        return latPicking;
-    }
-
-    public Double getLngArriving() {
-        return lngArriving;
-    }
-
-    public Double getLatArriving() {
-        return latArriving;
+    public Integer getHailing_id() {
+        return hailing_id;
     }
 }

@@ -63,7 +63,7 @@ public class RequestController {
     }
 
     @PatchMapping("/passenger")
-    public ResponseEntity<PassengerRequest> updateTaxi(@RequestBody PassengerRequest pr) {
+    public ResponseEntity<PassengerRequest> updatePassengerRequest(@RequestBody PassengerRequest pr) {
         return new ResponseEntity<>(passengerService.update(pr), HttpStatus.OK);
     }
 }
