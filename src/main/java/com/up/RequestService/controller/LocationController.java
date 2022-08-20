@@ -33,4 +33,9 @@ public class LocationController {
     public ResponseEntity<Optional<Location>> getLocationById(@PathVariable("id") Integer locationId) {
         return new ResponseEntity<>(locationService.findByLocationId(locationId), HttpStatus.OK);
     }
+
+    @GetMapping("/name/{id}")
+    public ResponseEntity<String> getNameLocationById(@PathVariable("id") Integer locationId) {
+        return new ResponseEntity<>(locationService.findNameByLocationId(locationId), HttpStatus.OK);
+    }
 }

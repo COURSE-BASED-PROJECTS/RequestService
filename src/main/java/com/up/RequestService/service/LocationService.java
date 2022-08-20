@@ -25,4 +25,8 @@ public class LocationService {
     public Optional<Location> findByLocationId(Integer locationId) {
         return locationRepository.findById(locationId);
     }
+
+    public String findNameByLocationId(Integer locationId) {
+        return this.findByLocationId(locationId).get().getLocation_name();
+    }
 }

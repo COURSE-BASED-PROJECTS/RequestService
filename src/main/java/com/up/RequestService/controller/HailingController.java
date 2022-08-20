@@ -1,5 +1,6 @@
 package com.up.RequestService.controller;
 
+import com.up.RequestService.dto.HistoryDto;
 import com.up.RequestService.model.Hailing;
 import com.up.RequestService.service.HailingService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,12 +35,12 @@ public class HailingController {
     }
 
     @GetMapping("/clientHailing/{client_id}")
-    public ResponseEntity<List<Hailing>> getHailingByClientId(@PathVariable("client_id") String clientId) {
-        return new ResponseEntity<>(hailingService.findByClientId(clientId), HttpStatus.OK);
+    public ResponseEntity<List<HistoryDto>> getHailingByClientId(@PathVariable("client_id") String clientId) {
+        return new ResponseEntity<>(hailingService.findHistoryByClientId(clientId), HttpStatus.OK);
     }
 
     @GetMapping("/driverHailing/{driver_id}")
-    public ResponseEntity<List<Hailing>> getHailingByDriverId(@PathVariable("driver_id") Integer driverId) {
-        return new ResponseEntity<>(hailingService.findByDriverId(driverId), HttpStatus.OK);
+    public ResponseEntity<List<HistoryDto>> getHailingByDriverId(@PathVariable("driver_id") Integer driverId) {
+        return new ResponseEntity<>(hailingService.findHistoryByDriverId(driverId), HttpStatus.OK);
     }
 }
