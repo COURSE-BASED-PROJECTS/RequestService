@@ -29,4 +29,12 @@ public class LocationService {
     public String findNameByLocationId(Integer locationId) {
         return this.findByLocationId(locationId).get().getLocation_name();
     }
+
+    public Optional<Location> findByLatLong(Double lattitude, Double longtitude) {
+        return locationRepository.findByLatLong(lattitude, longtitude);
+    }
+
+    public Location addNew(Location location) {
+        return locationRepository.save(location);
+    }
 }
