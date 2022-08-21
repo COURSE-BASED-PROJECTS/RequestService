@@ -9,6 +9,6 @@ import java.util.Optional;
 
 
 public interface LocationRepository extends JpaRepository<Location, Integer> {
-    @Query(value = "SELECT * FROM location l where l.latitude = :latitude and l.longitude = :longitude", nativeQuery = true)
+    @Query(value = "SELECT * FROM location l where l.latitude = :latitude and l.longitude = :longitude LIMIT 1", nativeQuery = true)
     Optional<Location> findByLatLong(@Param("latitude") Double lattitude, @Param("longitude") Double longtitude);
 }

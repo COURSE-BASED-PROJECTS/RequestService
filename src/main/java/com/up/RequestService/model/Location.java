@@ -19,20 +19,16 @@ public class Location {
     @Column(name = "count")
     public Integer count;
 
-    @Column(name = "client_id")
-    public String client_id;
-
     @Column(name = "latitude")
     public Double latitude;
 
     @Column(name = "longitude")
     public Double longitude;
 
-    public Location(Integer location_id, String location_name, Integer count, String client_id, Double latitude, Double longitude) {
+    public Location(Integer location_id, String location_name, Integer count, Double latitude, Double longitude) {
         this.location_id = location_id;
         this.location_name = location_name;
         this.count = count;
-        this.client_id = client_id;
         this.latitude = latitude;
         this.longitude = longitude;
     }
@@ -51,10 +47,6 @@ public class Location {
 
     public Integer getCount() {
         return count;
-    }
-
-    public String getClient_id() {
-        return client_id;
     }
 
     public Double getLatitude() {

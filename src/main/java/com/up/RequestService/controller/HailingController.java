@@ -6,10 +6,7 @@ import com.up.RequestService.service.HailingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -27,6 +24,10 @@ public class HailingController {
     @GetMapping
     public ResponseEntity<List<Hailing>> getAllHailing() {
         return new ResponseEntity<>(hailingService.findAll(), HttpStatus.OK);
+    }
+    @PostMapping
+    public ResponseEntity<Integer> addNewHailing(@RequestBody Hailing hailing) {
+        return new ResponseEntity<>(hailingService.addNew(hailing).getHailing_id(), HttpStatus.OK);
     }
 
     @GetMapping("/{id}")

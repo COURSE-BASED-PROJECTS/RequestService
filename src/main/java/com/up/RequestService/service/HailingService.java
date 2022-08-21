@@ -90,4 +90,10 @@ public class HailingService {
 
         return result;
     }
+
+    public Hailing addNew(Hailing hailing) {
+        hailing.scope = hailing.scope.toUpperCase();
+        hailing.status = hailing.status.toUpperCase();
+        return  hailingRepository.save(hailing);
+    }
 }
